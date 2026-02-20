@@ -172,6 +172,11 @@ class AudioDeviceManager: ObservableObject {
                   isValidInputDevice(deviceID: deviceID) else {
                 return nil
             }
+            
+            if name.contains("USB Audio Device") {
+                return nil
+            }
+            
             return (id: deviceID, uid: uid, name: name)
         }
         
